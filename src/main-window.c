@@ -268,7 +268,7 @@ img_window_struct *img_create_window (void)
 	gtk_widget_add_accelerator (import_menu,"activate",img_struct->accel_group,GDK_i,GDK_CONTROL_MASK,GTK_ACCEL_VISIBLE);
 	g_signal_connect (G_OBJECT (import_menu),"activate",G_CALLBACK (img_add_slides_thumbnails),img_struct);
 
-	pixbuf = gtk_icon_theme_load_icon(icon_theme,"image", 18, 0, NULL);
+	pixbuf = gtk_icon_theme_load_icon(icon_theme,"image-x-generic", 18, 0, NULL);
 	image_menu = gtk_image_new_from_pixbuf(pixbuf);
 	g_object_unref(pixbuf);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (import_menu),image_menu);
@@ -278,7 +278,7 @@ img_window_struct *img_create_window (void)
 	gtk_widget_add_accelerator (import_audio_menu,"activate",img_struct->accel_group,GDK_m,GDK_CONTROL_MASK,GTK_ACCEL_VISIBLE);
 	g_signal_connect (G_OBJECT (import_audio_menu),"activate",G_CALLBACK (img_select_audio_files_to_add),img_struct);
 
-	pixbuf = gtk_icon_theme_load_icon(icon_theme,"sound", 18, 0, NULL);
+	pixbuf = gtk_icon_theme_load_icon(icon_theme,"audio-x-generic", 18, 0, NULL);
 	image_menu = gtk_image_new_from_pixbuf(pixbuf);
 	g_object_unref(pixbuf);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (import_audio_menu),image_menu);
@@ -512,7 +512,7 @@ img_window_struct *img_create_window (void)
 	gtk_widget_show (separatortoolitem);
 	gtk_container_add (GTK_CONTAINER (toolbar),separatortoolitem);
 
-	pixbuf = gtk_icon_theme_load_icon(icon_theme,"image", 20, 0, NULL);
+	pixbuf = gtk_icon_theme_load_icon(icon_theme,"image-x-generic", 20, 0, NULL);
 	tmp_image = gtk_image_new_from_pixbuf(pixbuf);
 	g_object_unref(pixbuf);
 
@@ -521,7 +521,7 @@ img_window_struct *img_create_window (void)
 	gtk_widget_set_tooltip_text(import_button, _("Import pictures"));
 	g_signal_connect ((gpointer)import_button, "clicked", G_CALLBACK (img_add_slides_thumbnails),img_struct);
 
-	pixbuf = gtk_icon_theme_load_icon(icon_theme,"sound", 20, 0, NULL);
+	pixbuf = gtk_icon_theme_load_icon(icon_theme,"audio-x-generic", 20, 0, NULL);
 	tmp_image = gtk_image_new_from_pixbuf(pixbuf);
 	g_object_unref(pixbuf);
 
