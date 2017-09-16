@@ -2110,7 +2110,7 @@ static void img_show_uri(GtkMenuItem *menuitem, img_window_struct *img)
 	gchar *lang = NULL;
 	
 	lang = g_strndup(g_getenv("LANG"),2);
-	file = g_strconcat("file://",DATADIR,"/doc/",PACKAGE,"/html/",lang,"/index.html",NULL);
+	file = g_strconcat("file://",DATADIR,"/doc/",PACKAGE,"-",PACKAGE_VERSION,"/html/",lang,"/index.html",NULL);
 	g_free(lang);
 	img_message (img, FALSE, "%s\n", file);
 
@@ -2118,7 +2118,7 @@ static void img_show_uri(GtkMenuItem *menuitem, img_window_struct *img)
 	if ( !gtk_show_uri(NULL,file, GDK_CURRENT_TIME, NULL))
 	{
 		g_free( file );
-		file = g_strconcat("file://",DATADIR,"/doc/",PACKAGE,"/html/en/index.html",NULL);
+		file = g_strconcat("file://",DATADIR,"/doc/",PACKAGE,"-",PACKAGE_VERSION,"/html/en/index.html",NULL);
 		gtk_show_uri(NULL,file, GDK_CURRENT_TIME, NULL);
 	}
 	g_free(file);
