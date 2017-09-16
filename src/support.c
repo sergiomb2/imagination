@@ -1146,7 +1146,7 @@ img_message (img_window_struct *img,
         gtk_text_buffer_insert(img->message_buffer, &message_end,
                                parsed_message, -1);
 
-        printf (parsed_message);
+        printf ("%s", parsed_message);
 
         free(parsed_message);
 
